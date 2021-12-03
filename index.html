@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>studio web design</title>
+</head>
+<body>
+    <div class="con">
+        <div class="nav">
+              <img src="images/logo.png" class="logo">
+              <nav>
+                  <ul id="menuList">
+                      <li><a href="">Home</a></li>
+                      <li><a href="">Office</a></li>
+                      <li><a href="">Hotels</a></li>
+                      <li><a href="">Contact</a></li>
+                  </ul>
+              </nav>
+              <img src="images/menu.png" class="menu" onclick="togglemenu()">
+         </div>
+         <div class="row">
+             <div class="col">
+                 <div class="text-box">
+                     <h5>our product</h5>
+                     <h1><br> Simplicity <br> is <b> the ultimate </b> sophistications</h1>
+                 </div>
+                 <img src="images/circle.png" class="icon1">
+                 <img src="images/circle.png" class="icon2">
+                 <img src="images/square.png" class="icon3">
+             </div>
+             <div class="col">
+                 <div class="gellery">
+                    <img src="images/pic2.jpg" id="gallery">
+                    <ul>
+                        <li class="btn">01</li>
+                        <li class="btn active">02</li>
+                        <li class="btn">03</li> 
+                        <li class="btn">04</li>
+                        
+                    </ul>
+                 </div>
+             </div>
+         </div>
+         <img src="images/circle.png" class="icon4">
+         <img src="images/square.png" class="icon5">
+    </div>
+    <script>
+         let btn = document.getElementsByClassName("btn");
+         let gallery = document.getElementById("gallery");
+         let images = new Array(
+             "images/pic1.jpg",
+             "images/pic2.jpg",
+             "images/pic3.jpg",
+             "images/pic4.jpg",
+         );
+         for(let i=0; i<btn.length; i++){
+             btn[i].onclick = function()
+             {
+                 gallery.src = images[i];
+                 let current = document.getElementsByClassName("active");
+                 current[0].className = current[0].className.replace("active", "");
+                 this.className += " active";
+             };
+
+         }
+
+
+
+        let menuList = document.getElementById("menuList");
+        menuList.style.maxHeight = "0px"
+        function togglemenu() {
+            if(menuList.style.maxHeight == "0px")
+            {
+                menuList.style.maxHeight = "290px"
+            }else
+            {
+                menuList.style.maxHeight = "0px";
+            }
+        }
+    </script>
+</body>
+</html>
